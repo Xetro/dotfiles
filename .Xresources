@@ -1,0 +1,28 @@
+*.font: xft:Hack Nerd Font Mono:size=10
+
+Xft.dpi:                        96
+Xft.antialias:                  1
+Xft.autohint:                   1
+Xft.hinting:                    1
+Xft.hintstyle:                  hintslight
+Xft.lcdfilter:                  lcdlight
+Xft.rgba:                       rgb
+
+URxvt*termName:                 rxvt-unicode
+!URxvt.transparent:		true
+!URxvt.shading:			30
+!URxvt.tintColor:		white
+urxvt*background:		rgba:0000/0000/0200/c800
+URxvt.depth:                    32
+URxvt*lineSpace:                1
+URxvt.letterSpace:              -1
+URxvt.iso14755:                 false
+URxvt.iso14755_52:              false
+URxvt*geometry:                 65x17
+URxvt.scrollBar:                false
+URxvt*loginShell:               true
+URxvt.internalBorder:           25
+URxvt.perl-ext:	 		default,matcher
+URxvt.url-launcher:             firefox
+URxvt.matcher.button: 		1
+

@@ -1,0 +1,174 @@
+[colors]
+background = ${xrdb:color0:#222}
+foreground = ${xrdb:color7:#222}
+foreground-alt = ${xrdb:color4:#222}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#222}
+alert = ${xrdb:color3:#222}
+ 
+[bar/bar]
+font-0 = "Hack Nerd Font:pixelsize=10;2.25"
+
+monitor = "HDMI-A-0"
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+fixed-center = true
+
+width = 100%
+height = 30
+
+background = ${colors.background} 
+foreground = ${colors.foreground}
+
+radius = 0.0
+
+# line-size = 1
+# line-color = #f00
+
+# border-size = 2
+# border-color = #00ff00
+padding-left = 1
+padding-right = 1
+module-margin = 0
+
+modules-left = i3 
+modules-center = date
+modules-right = pulseaudio
+
+[bar/bar1]
+
+font-0 = "Hack Nerd Font:pixelsize=10;2.25"
+
+monitor = "DisplayPort-2"
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+fixed-center = true
+
+width = 100%
+height = 30
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+radius = 0.0
+
+# line-size = 1
+# line-color = #f00
+
+# border-size = 2
+# border-color = #00ff00
+padding-left = 1
+padding-right = 1
+module-margin = 0
+
+modules-left = i3 
+modules-center = 
+modules-right = cpu
+
+[module/cpu]
+type = internal/cpu
+
+format = <label> <ramp-coreload>
+
+label = ﬙ %percentage%%
+
+
+ramp-coreload-2-foreground = ${xrdb:color6:#222}
+ramp-coreload-3-foreground = ${xrdb:color6:#222}
+ramp-coreload-4-foreground = ${xrdb:color4:#222}
+ramp-coreload-5-foreground = ${xrdb:color4:#222}
+ramp-coreload-6-foreground = ${xrdb:color1:#222}
+ramp-coreload-7-foreground = ${xrdb:color1:#222}
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-7 = █
+r
+[module/i3]
+strip-wsnumbers = true
+type = internal/i3
+format = <label-state> <label-mode>
+pin-workspaces = true
+
+label-focused = %index%
+label-focused-foreground = ${colors.background}
+label-focused-background = ${colors.foreground}
+label-focused-underline = #fba922
+label-focused-padding = 1
+
+label-unfocused = %index%
+label-unfocused-padding = 1
+
+label-visible = %index%
+label-visible-underline = #555555
+label-visible-padding = 1
+
+label-urgent = %index%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-padding = 1
+
+[module/date]
+type = internal/date
+interval = 1.0
+date = %A, %d %B %I:%M %p
+
+# [module/github]
+# type = internal/github
+
+# ; Accessing an access token stored in file
+# token = ${file:/path/to/file/containing/github/access.token}
+
+# ; Accessing an access token stored in an environment variable
+# token = ${env:GITHUB_ACCESS_TOKEN}
+
+# ; Whether empty notifications should be displayed or not
+# empty-notifications = false
+
+[module/title]
+type = internal/xwindow
+# format-background = #f00
+format-foreground = #f0c674
+format-padding = 1
+label-maxlen = 50
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+sink = alsa_output.pci-0000_00_1f.3.analog-stereo
+
+use-ui-max = true
+
+; Available tags:
+;   <label-volume> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-volume = <label-volume> <ramp-volume>
+
+; Available tags:
+;   <label-muted> (default)
+;   <ramp-volume>
+;   <bar-volume>
+;format-muted = <label-muted>
+
+; Available tokens:
+;   %percentage% (default)
+;label-volume = %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+label-muted = ﱝ
+;label-muted-foreground = #66
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 奄
+ramp-volume-1 = 奔
+ramp-volume-2 = 墳
