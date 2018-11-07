@@ -1,4 +1,4 @@
-*.font: xft:Hack Nerd Font Mono:size=10
+*.font: xft:Hack Nerd Font Mono:size=9
 
 Xft.dpi:                        96
 Xft.antialias:                  1
@@ -23,6 +23,6 @@ URxvt.scrollBar:                false
 URxvt*loginShell:               true
 URxvt.internalBorder:           25
 URxvt.perl-ext:	 		default,matcher
-URxvt.url-launcher:             firefox
+URxvt.url-launcher:             google-chrome
 URxvt.matcher.button: 		1
 

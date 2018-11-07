@@ -76,8 +76,8 @@ modules-right = cpu
 [module/cpu]
 type = internal/cpu
 
-format = <label> <ramp-coreload>
-label = ﬙ %percentage%%
+format = <label> <ramp-coreload> 
+label = %percentage%% 
 
 
 ramp-coreload-2-foreground = ${xrdb:color6:#222}
@@ -179,7 +179,7 @@ ramp-volume-2 = 墳
 [module/mpd]
 type = internal/mpd
 
-format-online = <label-time> |<label-song><bar-progress><icon-prev><icon-stop><toggle><icon-next>
+format-online = <label-time> |<icon-prev><icon-stop><toggle><icon-next><bar-progress><label-song>
 format-online-spacing = 1
 format-online-background = ${colors.background}
 format-online-underline = #cc333333

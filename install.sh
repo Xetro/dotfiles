@@ -102,7 +102,7 @@ rm -rf $BASEDIR/i3-gaps
 
 cd $BASEDIR
 
-if [ -z "$(fc-list | grep "Hack Nerd Font")" ] ; then
+if [ -z "$(fc-list | grep "Hack Nerd Font Mono")" ] ; then
     message yellow "Installing fonts..."
     wget -O fonts.zip https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip
     unzip fonts.zip && rm fonts.zip
