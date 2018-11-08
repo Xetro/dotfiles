@@ -122,3 +122,15 @@ etc/clusto*.conf
 !.hammerspoon
 !.hammerspoon/*
 .hammerspoon/.*.swp
+
+!install.sh
+!packages.list
+!outrun.png
+!.Xresources
+!.config
+!.config/*
+!.config/*/*
+!.config/*/*/*
+.config/ranger/history
+.config/ranger/bookmarks
+

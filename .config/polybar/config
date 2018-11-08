@@ -7,7 +7,7 @@ secondary = ${xrdb:color2:#222}
 alert = ${xrdb:color3:#222}
  
 [bar/bar]
-font-0 = "Hack:pixelsize=10;2.25"
+font-0 = "Hack Nerd Font:pixelsize=10;2.25"
 
 monitor = "HDMI-A-0"
 
@@ -33,15 +33,15 @@ border-bottom-size = 2
 border-bottom-color = ${colors.primary}
 padding-left = 1
 padding-right = 1
-module-margin = 0
+module-margin = 1
 
 modules-left = i3 
 modules-center = date
-modules-right = pulseaudio
+modules-right = cpu
 
 [bar/bar1]
 
-font-0 = "Hack Nerd Font Mono:pixelsize=10;2.25"
+font-0 = "Hack Nerd Font:pixelsize=10;2.25"
 
 monitor = "DisplayPort-0"
 
@@ -67,11 +67,11 @@ border-bottom-size = 2
 border-bottom-color = ${colors.primary}
 padding-left = 1
 padding-right = 1
-module-margin = 0
+module-margin = 1
 
 modules-left = i3 mpd
 modules-center = 
-modules-right = cpu
+modules-right = pulseaudio
 
 [module/cpu]
 type = internal/cpu
@@ -168,7 +168,7 @@ format-volume = <label-volume> <ramp-volume>
 
 ; Available tokens:
 ;   %percentage% (default)
-label-muted = ﱝs
+label-muted = mute ﱝ
 ;label-muted-foreground = #66
 
 ; Only applies if <ramp-volume> is used
@@ -179,27 +179,35 @@ ramp-volume-2 = 墳
 [module/mpd]
 type = internal/mpd
 
-format-online = <label-time> |<icon-prev><icon-stop><toggle><icon-next><bar-progress><label-song>
+host = 127.0.0.1
+port = 6600
+
+interval = 2
+
+format-online = <icon-prev><icon-stop><toggle><icon-next><label-time><bar-progress>%{A1:i3-msg exec rxvt-unicode \\-e ncmpcpp:}<label-song>%{A}
 format-online-spacing = 1
 format-online-background = ${colors.background}
 format-online-underline = #cc333333
-format-online-padding = 1
-format-stopped = ﱙ <toggle>
+format-online-padding = 0
+format-stopped = <icon-prev><icon-stop><toggle><icon-next> %{A1:i3-msg exec rxvt-unicode \\-e ncmpcpp:}%{A}
 
+bar-progress-format = %{A4:mpdseek+2: A5:mpdseek-2:}%fill%%indicator%%empty%%{A A}
 bar-progress-width = 10
 bar-progress-indicator = ﳂ
 bar-progress-fill = ─
 bar-progress-empty = 
 
 
-format-offline = <label-offline>
+format-offline = %{A1:i3-msg exec rxvt-unicode \\-e ncmpcpp:}<label-offline>%{A}
 format-offline-foreground = ${colors.foreground}
 
-label-offline = mpd is off
+label-offline = mpd offline  
 
-label-song-maxlen = 45
+label-song =   %artist% - %title%
+label-song-maxlen = 35
 label-song-ellipsis = true
 
+label-time = %total%
 label-time-foreground = ${colors.foreground-alt}
 
 icon-prev = 玲

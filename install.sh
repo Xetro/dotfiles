@@ -35,7 +35,7 @@ done
 
 message yellow "Installing oh-my-zsh..."a
 if [ ! -d "$HOME/.oh-my-zsh/" ] ; then
-    sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+    git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
 fi
 
 echo "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
@@ -46,6 +46,8 @@ fi
 
 message yellow "Installing pywal..."
 pip3 install pywal
+
+export PATH="${PATH}:${HOME}/.local/bin/"
 
 message yellow "Installing Vundle for Vim..."
 if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ] ; then
@@ -102,12 +104,13 @@ rm -rf $BASEDIR/i3-gaps
 
 cd $BASEDIR
 
-if [ -z "$(fc-list | grep "Hack Nerd Font Mono")" ] ; then
+if [ -z "$(fc-list | grep "Hack")" ] ; then
     message yellow "Installing fonts..."
-    wget -O fonts.zip https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip
-    unzip fonts.zip && rm fonts.zip
-    cp -R ttf/ ~/.local/share/fonts/
-    rm -rf ttf/
+    wget -O fonts.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Hack.zip a
+    mkdir fonts
+    unzip fonts.zip -d ./fonts && rm fonts.zip
+    cp -R fonts/ ~/.local/share/fonts/
+    rm -rf fonts/
     fc-cache -f -v
     fc-list } grep "Hack"
 else
@@ -145,5 +148,8 @@ done
 
 message yellow "Applying theme..."
 wal -n -a "93" -i "$BASEDIR/outrun.png"
+
+message yellow "Changing shell..."
+chsh -s /bin/zsh
 
 message green "FINISHED - Now log out and choose i3 environment"
