@@ -9,7 +9,7 @@ alert = ${xrdb:color3:#222}
 [bar/bar]
 font-0 = "Hack Nerd Font:pixelsize=10;2.25"
 
-monitor = "HDMI-A-0"
+monitor = ${env:MONITOR:}
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -43,7 +43,7 @@ modules-right = cpu
 
 font-0 = "Hack Nerd Font:pixelsize=10;2.25"
 
-monitor = "DisplayPort-0"
+monitor = ${env:MONITOR:}
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
