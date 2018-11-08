@@ -131,6 +131,8 @@ etc/clusto*.conf
 !.config/*
 !.config/*/*
 !.config/*/*/*
+.config/*/.*.swp
+.config/*/*/.*.swp
 .config/ranger/history
 .config/ranger/bookmarks
 
