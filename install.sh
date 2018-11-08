@@ -106,7 +106,7 @@ cd $BASEDIR
 
 if [ -z "$(fc-list | grep "Hack")" ] ; then
     message yellow "Installing fonts..."
-    wget -O fonts.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Hack.zip a
+    wget -O fonts.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Hack.zip
     mkdir fonts
     unzip fonts.zip -d ./fonts && rm fonts.zip
     cp -R fonts/ ~/.local/share/fonts/
