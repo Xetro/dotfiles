@@ -127,6 +127,8 @@ etc/clusto*.conf
 !packages.list
 !outrun.png
 !.Xresources
+!wallpapers/
+!wallpapers/*
 !.config
 !.config/*
 !.config/*/*
