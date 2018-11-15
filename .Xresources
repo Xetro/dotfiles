@@ -13,7 +13,7 @@ URxvt*termName:                 rxvt-unicode
 !URxvt.shading:			30
 !URxvt.tintColor:		white
 urxvt*background:		rgba:0000/0000/0200/c800
-URxvt.depth:                    32
+!URxvt.depth:                    32
 URxvt*lineSpace:                1
 URxvt.letterSpace:              -1
 URxvt.iso14755:                 false
@@ -26,3 +26,6 @@ URxvt.perl-ext:	 		default,matcher
 URxvt.url-launcher:             google-chrome
 URxvt.matcher.button: 		1
 
+
+rofi.font: Hack Nerd Font Mono 12
+rofi.width: 30

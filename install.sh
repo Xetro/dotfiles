@@ -78,7 +78,7 @@ else
     message green "Polybar already installed!"
 fi
 
-rm -rf $BASEDIR/polybar
+rm -r $BASEDIR/polybar
 
 if [ -z "$(command -v i3)" ] ; then
     message yellow "Installing i3-gaps..."
@@ -91,7 +91,7 @@ if [ -z "$(command -v i3)" ] ; then
     fi
     cd $BASEDIR/i3-gaps
     autoreconf --force --install
-    rm -rf build/
+    rm -r build/
     mkdir -p build && cd build/
     ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
     make
@@ -100,7 +100,7 @@ else
     message green "i3-gaps already installed!"
 fi
 
-rm -rf $BASEDIR/i3-gaps
+rm -r $BASEDIR/i3-gaps
 
 cd $BASEDIR
 
@@ -110,7 +110,7 @@ if [ -z "$(fc-list | grep "Hack")" ] ; then
     mkdir fonts
     unzip fonts.zip -d ./fonts && rm fonts.zip
     cp -R fonts/ ~/.local/share/fonts/
-    rm -rf fonts/
+    rm -r fonts/
     fc-cache -f -v
     fc-list } grep "Hack"
 else
@@ -133,15 +133,15 @@ Files=(
 )
 
 for i in "${Files[@]:0:3}"; do
-    echo "rm -f $HOME/$i"
-    rm -f $HOME/$i
+    echo "rm $HOME/$i"
+    rm $HOME/$i
 	echo "ln -srf $BASEDIR/$i $HOME/$i"
 	ln -srf $BASEDIR/$i $HOME/$i
 done
 
 for i in "${Files[@]:3:7}"; do
-    echo "rm -rf $HOME/$i"
-    rm -rf $HOME/$i
+    echo "rm -r $HOME/$i"
+    rm -r $HOME/$i
     echo "ln -srf $BASEDIR/$i $HOME/.config/"
     ln -srf $BASEDIR/$i $HOME/.config/
 done
