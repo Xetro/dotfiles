@@ -44,6 +44,9 @@ bindsym $mod+m exec rxvt-unicode -e ncmpcpp
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# switching window with win+tab
+bindsym $mod+Tab exec --no-startup-id rofi -show window
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.

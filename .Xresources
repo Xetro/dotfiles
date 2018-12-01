@@ -28,4 +28,4 @@ URxvt.matcher.button: 		1
 
 
 rofi.font: Hack Nerd Font Mono 12
-rofi.width: 30
+rofi.width: 40
