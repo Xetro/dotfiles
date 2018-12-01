@@ -14,7 +14,7 @@ Featuring:
 
 Included installations script (install.sh) for automatic installation and configuration on fresh systems. Tested on Ubuntu 18.04, use with caution.
 
-WARNING: This is not a stable finished product as I continously tweak it along with my current needs and usage. Although there shouldn't be any major changes.
+WARNING: This is not a stable finished product as I continuously tweak it along with my current needs and usage. Although there shouldn't be any major changes.
 
 Preview #1
 ![Theme #1](https://i.postimg.cc/9V4HLYXh/Screenshot-from-2018-12-01-20-59-29.png)
