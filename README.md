@@ -1,6 +1,6 @@
 # Dotfiles
 
-My custom linux desktop environment (rice).
+My custom linux desktop environment (rice). Intended for dual monitor setup.
 
 Featuring: 
 - i3-window manager
