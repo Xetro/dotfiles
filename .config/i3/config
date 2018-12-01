@@ -32,6 +32,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec rxvt-unicode
 
+# start ranger
+bindsym $mod+Shift+Return exec rxvt-unicode -e ranger
+
 # start rofi
 bindsym $mod+d exec rofi -show run
 
