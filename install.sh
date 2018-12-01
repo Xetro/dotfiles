@@ -38,9 +38,7 @@ if [ ! -d "$HOME/.oh-my-zsh/" ] ; then
     git clone https://github.com/robbyrussell/oh-my-zsh.git "$HOME/.oh-my-zsh"
 fi
 
-echo "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
-
-if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" ] ; then
+if [ ! -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" ] ; then
     git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
 fi
 
@@ -104,14 +102,16 @@ rm -rf "$BASEDIR/i3-gaps"
 
 cd "$BASEDIR"
 
-if fc-list | ! grep -q 'Hack'  ; then
+if ! fc-list | grep -q 'Hack'  ; then
     message yellow "Installing fonts..."
     wget -O fonts.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Hack.zip
     mkdir fonts
-    unzip fonts.zip -d ./fonts && rm fonts.zip
+    (unzip fonts.zip -d ./fonts && rm fonts.zip)
+    wait
     cp -R fonts/ ~/.local/share/fonts/
     rm -rf fonts/
-    fc-cache -f -v
+    (fc-cache -f -v)
+    wait
     fc-list | grep "Hack"
 else
     message green "fonts already instaleed!"
@@ -133,8 +133,8 @@ Files=(
 )
 
 for i in "${Files[@]:0:3}"; do
-    echo "rm $HOME/$i"
-    rm "${HOME:?}/$i"
+    echo "rm -f $HOME/$i"
+    rm -f "${HOME:?}/$i"
 	echo "ln -srf $BASEDIR/$i $HOME/$i"
 	ln -srf "$BASEDIR/$i" "$HOME/$i"
 done
@@ -147,7 +147,7 @@ for i in "${Files[@]:3:7}"; do
 done
 
 message yellow "Applying theme..."
-wal -n -i "$BASEDIR/mountain.jpg"
+wal -n -i "$BASEDIR/wallpapers/mountain.jpg"
 
 message yellow "Changing shell..."
 chsh -s /bin/zsh
