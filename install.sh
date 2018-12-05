@@ -137,6 +137,7 @@ Files=(
     '.config/compton'
     '.config/mpd'
     '.config/ncmpcpp'
+    '.config/aliases.zsh'
 )
 
 for i in "${Files[@]:0:3}"; do
@@ -146,7 +147,7 @@ for i in "${Files[@]:0:3}"; do
 	ln -srf "$BASEDIR/$i" "$HOME/$i"
 done
 
-for i in "${Files[@]:3:7}"; do
+for i in "${Files[@]:3:8}"; do
     echo "rm -rf $HOME/$i"
     rm -rf "${HOME:?}/$i"
     echo "ln -srf $BASEDIR/$i $HOME/.config/"

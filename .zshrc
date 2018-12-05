@@ -98,3 +98,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR # Sets vim default editor for ranger
+
+source $HOME/.config/aliases.zsh
